@@ -1,16 +1,15 @@
-const express = require('express');
-const morgan = require('morgan');
-const minifyHTML = require('express-minify-html');
 const compression = require('compression');
+const express = require('express');
+const minifyHTML = require('express-minify-html');
+const morgan = require('morgan');
 
 function createApp() {
   const app = express();
 
   app.disable('x-powered-by');
-  app.use(compression());
-
   app.set('view engine', 'ejs');
   app.set('views', './views');
+  app.use(compression());
   app.use(express.static('public'));
 
   if (process.env.NODE_ENV !== 'test') {
