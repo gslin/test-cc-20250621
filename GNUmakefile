@@ -1,6 +1,6 @@
 #
 .DEFAULT_GOAL:=	test
-.PHONY:		dev test build-css lint
+.PHONY:		build-css dev lint test
 
 build-css::
 	npm run build-css
@@ -8,8 +8,8 @@ build-css::
 dev:: build-css
 	npm run dev
 
-test::
-	npm test
-
 lint::
 	npm run lint
+
+test::
+	npm test
