@@ -3,8 +3,14 @@ const express = require('express');
 function createApp() {
   const app = express();
   
+  app.set('view engine', 'ejs');
+  app.set('views', './views');
+  
   app.get('/', (req, res) => {
-    res.send('Hello world.');
+    res.render('index', { 
+      title: 'Welcome', 
+      message: 'Hello world.' 
+    });
   });
   
   return app;
