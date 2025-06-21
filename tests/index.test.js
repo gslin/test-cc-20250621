@@ -15,7 +15,8 @@ describe('Express App', () => {
         .expect(200);
 
       expect(response.text).toContain('Hello world.');
-      expect(response.text).toContain('<h1>Hello world.</h1>');
+      expect(response.text).toContain('<h1 class=');
+      expect(response.text).toContain('Hello world.');
       expect(response.text).toContain('<title>Welcome</title>');
       expect(response.text).toContain('Current time:');
     });
