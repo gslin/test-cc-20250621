@@ -21,7 +21,8 @@ module.exports = [
     rules: {
       "no-console": "warn",
       "semi": ["error", "always"],
-      "quotes": ["error", "single"]
+      "quotes": ["error", "single"],
+      "no-trailing-spaces": "error"
     }
   },
   {

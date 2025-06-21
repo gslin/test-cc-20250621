@@ -13,7 +13,7 @@ describe('Express App', () => {
       const response = await request(app)
         .get('/')
         .expect(200);
-      
+
       expect(response.text).toContain('Hello world.');
       expect(response.text).toContain('<h1>Hello world.</h1>');
       expect(response.text).toContain('<title>Welcome</title>');
