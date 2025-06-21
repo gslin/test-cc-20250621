@@ -1,8 +1,11 @@
 #
 .DEFAULT_GOAL:=	test
-.PHONY:		dev test
+.PHONY:		dev test build-css
 
-dev::
+build-css::
+	npm run build-css
+
+dev:: build-css
 	npm run dev
 
 test::
