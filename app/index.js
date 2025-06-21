@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 
 function createApp() {
   const app = express();
@@ -6,6 +7,10 @@ function createApp() {
   app.set('view engine', 'ejs');
   app.set('views', './views');
   app.use(express.static('public'));
+
+  if (process.env.NODE_ENV !== 'test') {
+    app.use(morgan('combined'));
+  }
 
   app.get('/', (req, res) => {
     res.render('index', {
