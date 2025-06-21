@@ -1,9 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
 const minifyHTML = require('express-minify-html');
+const compression = require('compression');
 
 function createApp() {
   const app = express();
+
+  app.use(compression());
 
   app.set('view engine', 'ejs');
   app.set('views', './views');
