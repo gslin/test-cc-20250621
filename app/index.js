@@ -16,19 +16,7 @@ function createApp() {
     app.use(morgan('combined'));
   }
 
-  app.use(minifyHTML({
-    override: true,
-    exception_url: false,
-    htmlMinifier: {
-      removeComments: true,
-      collapseWhitespace: true,
-      collapseBooleanAttributes: true,
-      removeAttributeQuotes: true,
-      removeEmptyAttributes: true,
-      minifyJS: true,
-      minifyCSS: true
-    }
-  }));
+  app.use(minifyHTML({override: true}));
 
   app.get('/', (req, res) => {
     res.render('index', {
