@@ -6,6 +6,7 @@ const compression = require('compression');
 function createApp() {
   const app = express();
 
+  app.disable('x-powered-by');
   app.use(compression());
 
   app.set('view engine', 'ejs');
