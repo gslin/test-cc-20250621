@@ -1,0 +1,7 @@
+{
+  "watch": ["app/", "views/", "src/"],
+  "ext": "js,ejs,css",
+  "events": {
+    "restart": "npm run build-css"
+  }
+}
