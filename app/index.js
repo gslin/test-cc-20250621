@@ -9,7 +9,8 @@ function createApp() {
   app.get('/', (req, res) => {
     res.render('index', { 
       title: 'Welcome', 
-      message: 'Hello world.' 
+      message: 'Hello world.',
+      currentTime: new Date().toLocaleString()
     });
   });
   
