@@ -1,4 +1,7 @@
+const js = require("@eslint/js");
+
 module.exports = [
+  js.configs.recommended,
   {
     languageOptions: {
       ecmaVersion: 2022,
@@ -16,7 +19,6 @@ module.exports = [
       }
     },
     rules: {
-      "no-unused-vars": "error",
       "no-console": "warn",
       "semi": ["error", "always"],
       "quotes": ["error", "single"]
