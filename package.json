@@ -7,7 +7,8 @@
     "dev": "node app/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build-css": "postcss src/input.css -o public/css/output.css"
+    "build-css": "postcss src/input.css -o public/css/output.css",
+    "lint": "eslint app/ tests/"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.10",
     "autoprefixer": "^10.4.21",
+    "eslint": "^9.29.0",
     "jest": "^30.0.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
