@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const minifyHTML = require('express-minify-html');
 
 function createApp() {
   const app = express();
@@ -11,6 +12,20 @@ function createApp() {
   if (process.env.NODE_ENV !== 'test') {
     app.use(morgan('combined'));
   }
+
+  app.use(minifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+      minifyJS: true,
+      minifyCSS: true
+    }
+  }));
 
   app.get('/', (req, res) => {
     res.render('index', {
