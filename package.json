@@ -2,9 +2,9 @@
   "name": "test-cc-20250621",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "node app/index.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
