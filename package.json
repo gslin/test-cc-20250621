@@ -4,7 +4,8 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "dev": "nodemon app/index.js",
+    "dev": "concurrently \"nodemon app/index.js\" \"browser-sync start --proxy localhost:3000 --files 'views/**/*.ejs,public/**/*.css,public/**/*.js'\"",
+    "dev:server": "nodemon app/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "build-css": "postcss src/input.css -o public/css/output.css",
@@ -24,6 +25,8 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.10",
     "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.1.2",
     "eslint": "^9.29.0",
     "jest": "^30.0.2",
     "nodemon": "^3.1.10",
